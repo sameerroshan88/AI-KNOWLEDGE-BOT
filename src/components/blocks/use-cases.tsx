@@ -3,19 +3,19 @@ const useCases = [
     emoji: "🎓",
     title: "Students",
     description:
-      "Understand textbooks, lecture notes, and assignments faster. Get help with problem sets and exam prep.",
+      "Get instant answers about admissions, fees, hostel details, exam rules, and the academic calendar — without calling the admin office.",
   },
   {
     emoji: "🔬",
     title: "Researchers",
     description:
-      "Summarize papers, extract key findings, and compare multiple studies in a fraction of the time.",
+      "Query across multiple policy documents, guidelines, and research papers in seconds. Extract key information without reading every page.",
   },
   {
     emoji: "💼",
     title: "Professionals",
     description:
-      "Review contracts, financial reports, and legal documents fast and accurately.",
+      "Instantly access company SOPs, service details, pricing, and technical support answers — without waiting for the support team.",
   },
 ]
 

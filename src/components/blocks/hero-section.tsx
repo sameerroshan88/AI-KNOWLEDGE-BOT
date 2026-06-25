@@ -1,4 +1,4 @@
-import { Component as LoginPage } from "@/components/ui/animated-characters-login-page"
+import DemoOne from "@/components/ui/glsl-hills-hero"
 
 export function HeroSection() {
   return (
@@ -6,7 +6,7 @@ export function HeroSection() {
       id="hero"
       className="w-full"
     >
-      <LoginPage />
+      <DemoOne />
     </section>
   )
 }

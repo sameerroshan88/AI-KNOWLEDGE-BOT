@@ -26,7 +26,7 @@ export function LogoCloud({ className, logos, ...props }: LogoCloudProps) {
         {logos.map((logo, index) => (
           <img
             alt={logo.alt}
-            className={cn("pointer-events-none select-none", logo.className || "h-4 md:h-5")}
+            className={cn("pointer-events-none select-none object-contain h-20 md:h-24", logo.className)}
             height={logo.height || "auto"}
             key={`logo-${logo.alt}-${index}`}
             loading="lazy"

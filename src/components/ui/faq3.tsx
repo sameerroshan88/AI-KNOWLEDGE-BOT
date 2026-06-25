@@ -20,39 +20,27 @@ interface Faq3Props {
 const faqItems: FaqItem[] = [
   {
     id: "faq-1",
-    question: "Is AI Knowledge Base Bot free?",
+    question: "How does AI Knowledge Base Bot work?",
     answer:
-      "Yes! AI Knowledge Base Bot offers a free plan that lets you upload 2 PDFs per day with up to 120 pages each. No credit card is required to get started.",
+      "AIKB uses a RAG (Retrieval-Augmented Generation) approach. Documents are uploaded and indexed into a knowledge base. When a user asks a question, the AI searches for the most relevant information and uses Gemini AI to generate an accurate, document-backed answer.",
   },
   {
     id: "faq-2",
-    question: "How does AI Knowledge Base Bot work?",
+    question: "What types of PDFs can I upload?",
     answer:
-      "Upload any PDF, and AI Knowledge Base Bot uses AI to read and understand the document. You can then ask questions in plain English and get instant answers with citations pointing to the exact page and paragraph.",
+      "You can upload PDFs, SOPs (Standard Operating Procedures), policy documents, user manuals, guidelines, and FAQ documents. Admins manage all uploads through a secure document management panel.",
   },
   {
     id: "faq-3",
-    question: "What types of PDFs can I upload?",
+    question: "Is my data secure?",
     answer:
-      "AI Knowledge Base Bot works with textbooks, research papers, contracts, financial reports, lecture notes, and virtually any text-based PDF document up to 50 MB on the free plan.",
+      "Yes. All user data, documents, and chat history are stored securely with encrypted passwords and role-based access control. Only authorised admins can upload or manage documents.",
   },
   {
     id: "faq-4",
-    question: "Is my data secure?",
-    answer:
-      "Your documents are encrypted and never shared with third parties. You control your data and can delete your files at any time.",
-  },
-  {
-    id: "faq-5",
-    question: "Can I use AI Knowledge Base Bot on mobile?",
-    answer:
-      "Yes, AI Knowledge Base Bot works in any modern web browser on desktop, tablet, and mobile devices — no app download required.",
-  },
-  {
-    id: "faq-6",
     question: "What languages are supported?",
     answer:
-      "Upload PDFs in any language and ask questions in your own language. AI Knowledge Base Bot handles translation automatically.",
+      "AIKB currently supports English, Hindi, and Kannada. Additional regional languages are planned for future versions to serve a wider user base.",
   },
 ]
 

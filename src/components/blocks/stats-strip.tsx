@@ -1,8 +1,8 @@
 export function StatsStrip() {
   const stats = [
-    { value: "50M+", label: "Users" },
-    { value: "200M+", label: "PDFs Processed" },
-    { value: "4.8★", label: "App Rating" },
+    { value: "2", label: "Organisations Integrated" },
+    { value: "RAG-Powered", label: "AI Architecture" },
+    { value: "24×7", label: "Always Available" },
   ]
 
   return (

@@ -14,9 +14,12 @@ export function TrustedBy() {
     <section className="py-16 bg-background">
       <div className="container mx-auto px-4 max-w-4xl">
         <h2 className="mb-5 text-center font-medium text-foreground text-xl tracking-tight md:text-2xl">
-          <span className="text-muted-foreground">Trusted by millions.</span>
+          <span className="text-muted-foreground">
+            Built for real organisations deployed at&nbsp;
+            <span className="text-white font-semibold">Vidyashilp University & TechQRT.</span>
+          </span>
           <br />
-          <span className="font-semibold">Used by students and professionals worldwide.</span>
+          <span className="text-muted-foreground font-semibold">Helping students, faculty, and customers get instant answers.</span>
         </h2>
         <div className="mx-auto my-5 h-px max-w-sm bg-border [mask-image:linear-gradient(to_right,transparent,black,transparent)]" />
         <LogoCloud logos={logos} />

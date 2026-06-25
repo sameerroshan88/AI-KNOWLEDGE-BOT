@@ -3,21 +3,21 @@ import { FileUp, MessageCircle, Sparkles } from "lucide-react"
 const steps = [
   {
     icon: FileUp,
-    title: "Upload your PDF",
+    title: "Upload your documents",
     description:
-      "Drag and drop any PDF — textbooks, research papers, contracts, or reports.",
+      "Admins upload PDFs, SOPs, policies, manuals, or FAQs. The system reads and indexes every page automatically.",
   },
   {
     icon: MessageCircle,
     title: "Ask a question",
     description:
-      "Type your question in plain English. AI Knowledge Base Bot reads and understands the document.",
+      "Students, customers, or staff type any question in plain English, Hindi, or Kannada. No special commands needed.",
   },
   {
     icon: Sparkles,
     title: "Get cited answers",
     description:
-      "Receive instant answers with links to the exact page and paragraph in your PDF.",
+      "The AI finds the most relevant information from your documents and returns an accurate answer — instantly.",
   },
 ]
 

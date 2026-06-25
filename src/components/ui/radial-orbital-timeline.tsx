@@ -1,8 +1,5 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import { ArrowRight, Link, Zap } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 interface TimelineItem {
@@ -13,7 +10,6 @@ interface TimelineItem {
   category: string;
   icon: React.ElementType;
   relatedIds: number[];
-  status: "completed" | "in-progress" | "pending";
   energy: number;
 }
 
@@ -68,19 +64,6 @@ export default function RadialOrbitalTimeline({
     return { x, y, zIndex, opacity };
   };
 
-  const getStatusStyles = (status: TimelineItem["status"]): string => {
-    switch (status) {
-      case "completed":
-        return "text-white bg-black border-white";
-      case "in-progress":
-        return "text-black bg-white border-black";
-      case "pending":
-        return "text-white bg-black/40 border-white/50";
-      default:
-        return "text-white bg-black/40 border-white/50";
-    }
-  };
-
   const getRelatedItems = (itemId: number): number[] => {
     const item = timelineData.find((i) => i.id === itemId);
     return item ? item.relatedIds : [];
@@ -89,7 +72,7 @@ export default function RadialOrbitalTimeline({
   return (
     <div
       ref={containerRef}
-      className="w-full h-screen bg-black overflow-hidden flex flex-col items-center justify-center"
+      className="w-full h-full bg-black overflow-hidden flex flex-col items-center justify-center"
       style={{ zIndex: 9999, position: "relative", pointerEvents: "auto" }}
       onClick={handleContainerClick}
       onMouseEnter={() => setAutoRotate(false)}
@@ -182,61 +165,14 @@ export default function RadialOrbitalTimeline({
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-px h-3 bg-white/50"></div>
                     
                     <CardHeader className="pb-3">
-                      <div className="flex justify-between items-start gap-2">
-                        <Badge className={`px-2 py-1 text-xs ${getStatusStyles(item.status)}`}>
-                          {item.status === "completed" ? "COMPLETE" : item.status === "in-progress" ? "IN PROGRESS" : "PENDING"}
-                        </Badge>
-                        <span className="text-xs font-mono text-white/50">{item.date}</span>
+                      <div className="flex items-center justify-between gap-4">
+                        <CardTitle className="text-sm text-white">{item.title}</CardTitle>
+                        <span className="text-xs font-mono text-white/60">{item.date}</span>
                       </div>
-                      <CardTitle className="text-sm mt-2 text-white">{item.title}</CardTitle>
                     </CardHeader>
 
                     <CardContent className="text-xs text-white/80 space-y-3">
                       <p className="leading-relaxed">{item.content}</p>
-
-                      {/* Energy level */}
-                      <div className="pt-3 border-t border-white/10">
-                        <div className="flex justify-between items-center text-xs mb-2">
-                          <span className="flex items-center gap-1">
-                            <Zap size={10} className="text-teal-400" />
-                            Energy
-                          </span>
-                          <span className="font-mono font-semibold">{item.energy}%</span>
-                        </div>
-                        <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
-                          <div className="h-full bg-gradient-to-r from-blue-500 to-purple-500" style={{ width: `${item.energy}%` }} />
-                        </div>
-                      </div>
-
-                      {/* Connected nodes */}
-                      {item.relatedIds.length > 0 && (
-                        <div className="pt-3 border-t border-white/10">
-                          <div className="flex items-center gap-1 mb-2">
-                            <Link size={10} className="text-white/60" />
-                            <h4 className="text-xs uppercase tracking-wider font-semibold text-white/60">Connected</h4>
-                          </div>
-                          <div className="flex flex-wrap gap-1.5">
-                            {item.relatedIds.map((relatedId) => {
-                              const relatedItem = timelineData.find((i) => i.id === relatedId);
-                              return (
-                                <Button
-                                  key={relatedId}
-                                  onClick={(e) => {
-                                    e.stopPropagation();
-                                    handleNodeClick(relatedId);
-                                  }}
-                                  className="h-6 px-2 py-0 text-xs rounded-sm border-white/20 bg-white/5 hover:bg-white/15 text-white/70 hover:text-white transition-all"
-                                  variant="outline"
-                                  size="sm"
-                                >
-                                  {relatedItem?.title}
-                                  <ArrowRight size={8} className="ml-1 text-white/50" />
-                                </Button>
-                              );
-                            })}
-                          </div>
-                        </div>
-                      )}
                     </CardContent>
                   </Card>
                 )}
